@@ -1,1 +1,5 @@
-export default () => 42
+const answer = {
+  answer: 42,
+}
+
+export default answer
