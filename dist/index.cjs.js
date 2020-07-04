@@ -1,1 +1,1 @@
-"use strict";module.exports=()=>42;
+"use strict";module.exports={answer:42};
