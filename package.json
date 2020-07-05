@@ -26,8 +26,22 @@
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c rollup.config.js",
-    "test": "jest"
+    "prebuild": "npm run test && npm run clean",
+    "build": "npm run build:types && npm run build:js",
+    "build:js": "rollup -c",
+    "build:types": "tsc --emitDeclarationOnly",
+    "clean": "rimraf dist",
+    "lint": "eslint src/**/* --fix",
+    "prerelease": "npm run build",
+    "release": "npx standard-version",
+    "postrelease": "git push --follow-tags",
+    "start": "rollup -c -w",
+    "pretest": "npm run lint",
+    "test": "jest",
+    "test:cov": "npm run test -- --coverage",
+    "test:watch": "npm run test -- --watch --notify",
+    "types:check": "tsc --noEmit",
+    "types:watch": "npm run types:check -- --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -51,5 +65,6 @@
     "rollup-plugin-typescript": "^1.0.1",
     "ts-jest": "^26.1.1",
     "typescript": "^3.8.3"
-  }
+  },
+  "dependencies": {}
 }
