@@ -31,14 +31,12 @@
     "declarationDir": "dist/types"
   },
   "files": [
-    "src/index.tsx"
+    "src/index.ts"
   ],
   "include": [
     "src/global.d.ts",
     "src/**/*.ts",
-    "src/**/*.tsx",
-    "test/**/*.ts",
-    "test/**/*.tsx"
+    "test/**/*.ts"
   ],
   "exclude": [
     "dist",
