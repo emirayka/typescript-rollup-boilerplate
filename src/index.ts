@@ -1,4 +1,8 @@
-const answer = {
+export type Answer = {
+  answer: number
+}
+
+const answer: Answer = {
   answer: 42,
 }
 

@@ -3,7 +3,7 @@ import json from '@rollup/plugin-json'
 import resolve from '@rollup/plugin-node-resolve'
 import babel from '@rollup/plugin-babel'
 import { terser } from 'rollup-plugin-terser'
-import typescript from 'rollup-plugin-typescript'
+import ts from '@wessberg/rollup-plugin-ts'
 import pkg from './package.json'
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx']
@@ -26,7 +26,7 @@ export default [
       },
     ],
     plugins: [
-      typescript(),
+      ts(),
       json(),
       resolve({ extensions }),
       commonjs(),
@@ -47,7 +47,7 @@ export default [
       },
     ],
     plugins: [
-      typescript(),
+      ts(),
       json(),
       resolve({ extensions }),
       commonjs(),
